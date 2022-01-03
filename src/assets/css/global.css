@@ -1,0 +1,44 @@
+html, body, #app {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, input {
+    outline: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* clear float */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
