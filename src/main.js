@@ -10,6 +10,11 @@ import './assets/fonts/iconfont.css'
 // config axios
 import axios from 'axios'
 axios.defaults.baseURL = 'http://127.0.0.1:3000/'
+axios.interceptors.request.use(config => {
+  // console.log(config)
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
 
 Vue.prototype.$http = axios
 
