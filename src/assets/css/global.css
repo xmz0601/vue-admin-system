@@ -60,3 +60,19 @@ button, input {
     margin-top: 20px;
     font-size: 12px;
 }
+
+.el-cascader-menu .el-radio {
+    display: table;
+    vertical-align: middle;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    margin-left: -20px;
+    padding-left: 10px;
+}
+
+/* hide radio and checkbox */
+.el-cascader-menu .el-radio__inner {
+    display: none;
+}

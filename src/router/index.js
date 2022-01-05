@@ -7,6 +7,7 @@ import Welcome from '../components/Welcome.vue'
 
 import Staffs from '../components/User/Staffs.vue'
 import Customers from '../components/User/Customers.vue'
+import Cate from '../components/Category/Cate.vue'
 
 Vue.use(VueRouter)
 
@@ -23,7 +24,8 @@ const routes = [{
   children: [
     { path: '/admin/welcome', component: Welcome },
     { path: '/admin/staffs', component: Staffs },
-    { path: '/admin/customers', component: Customers }
+    { path: '/admin/customers', component: Customers },
+    { path: '/admin/categories', component: Cate }
   ]
 }]
 
