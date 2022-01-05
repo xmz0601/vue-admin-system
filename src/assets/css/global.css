@@ -76,3 +76,11 @@ button, input {
 .el-cascader-menu .el-radio__inner {
     display: none;
 }
+
+.ql-editor {
+    min-height: 300px;
+}
+
+.disabled .el-upload--picture-card {
+    display: none;
+}

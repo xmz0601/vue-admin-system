@@ -8,6 +8,9 @@ import Welcome from '../components/Welcome.vue'
 import Staffs from '../components/User/Staffs.vue'
 import Customers from '../components/User/Customers.vue'
 import Cate from '../components/Category/Cate.vue'
+import Goods from '../components/Goods/List.vue'
+import AddGoods from '../components/Goods/Add.vue'
+import EditGoods from '../components/Goods/Edit.vue'
 
 Vue.use(VueRouter)
 
@@ -25,7 +28,10 @@ const routes = [{
     { path: '/admin/welcome', component: Welcome },
     { path: '/admin/staffs', component: Staffs },
     { path: '/admin/customers', component: Customers },
-    { path: '/admin/categories', component: Cate }
+    { path: '/admin/categories', component: Cate },
+    { path: '/admin/goods', component: Goods },
+    { path: '/admin/goods/add', component: AddGoods },
+    { path: '/admin/goods/edit/:gid', component: EditGoods }
   ]
 }]
 
