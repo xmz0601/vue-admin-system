@@ -8,7 +8,7 @@
     <el-card class="box-card">
       <el-row :gutter="20">
         <el-col :span="10">
-          <el-input placeholder="please input search keyword" v-model="queryInfo.query">
+          <el-input placeholder="please input search keyword" v-model="queryInfo.query" clearable>
             <el-button slot="append" icon="el-icon-search" @click="searchGoods()"></el-button>
           </el-input>
         </el-col>
@@ -21,7 +21,11 @@
         <el-table-column type="index"></el-table-column>
         <el-table-column prop="name" label="Goods Name"></el-table-column>
         <el-table-column prop="weight" label="Goods Weight" width="110px"></el-table-column>
-        <el-table-column prop="price" label="Goods Price" width="100px"></el-table-column>
+        <el-table-column label="Goods Price" width="100px">
+          <template slot-scope="scope">
+            {{scope.row.price | priceFormat}}
+          </template>
+        </el-table-column>
         <el-table-column label="Create Time" width="140px">
           <template slot-scope="scope">
             {{scope.row.create_time | dateFormat}}

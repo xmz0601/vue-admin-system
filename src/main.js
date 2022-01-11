@@ -34,6 +34,15 @@ Vue.use(VueQuillEditor)
 Vue.filter('dateFormat', function(val) {
   return val.split('T')[0]
 })
+// price filter
+Vue.filter('priceFormat', function(num) {
+  var arr = (num + '').split('.')
+  if (arr[1]) {
+    if (arr[1].length === 1) return num + '0'
+    return num
+  }
+  return num + '.00'
+})
 
 new Vue({
   router,
