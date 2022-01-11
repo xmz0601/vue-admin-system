@@ -8,7 +8,7 @@
     <el-card class="box-card">
       <el-row :gutter="20">
         <el-col :span="10">
-          <el-input placeholder="please input search keyword" v-model="queryInfo.query">
+          <el-input placeholder="please input search keyword" v-model="queryInfo.query" clearable>
             <el-button slot="append" icon="el-icon-search" @click="searchUsername()"></el-button>
           </el-input>
         </el-col>
@@ -149,7 +149,7 @@ export default {
       if (res.meta.status !== 200) {
         this.$message.error(res.meta.msg)
         // remember to change the switch back
-        info.state = !info.state
+        info.state = info.state === 0 ? 1 : 0
       } else {
         this.$message.success('change customer state successfully')
       }

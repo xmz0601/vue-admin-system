@@ -42,15 +42,25 @@ const router = new VueRouter({
 })
 
 // mount a nav guard
+const jwt = require('jsonwebtoken')
 router.beforeEach((to, from, next) => {
-  if (to.path === '/admin/login') {
-    return next()
-  }
   var tokenStr = window.sessionStorage.getItem('token')
-  if (tokenStr) {
-    return next()
+  if (to.path === '/admin/login') {
+    // check if this user has logined
+    if (!tokenStr) return next()
+    // verify token
+    jwt.verify(tokenStr, 'secretkey', function(err, decoded) {
+      if (err) return next()
+      return next('/admin/home')
+    })
   }
-  next('/admin/login')
+
+  if (!tokenStr) return next('/admin/login')
+  // verify token
+  jwt.verify(tokenStr, 'secretkey', function(err, decoded) {
+    if (err) return next('/admin/login')
+    return next()
+  })
 })
 
 export default router

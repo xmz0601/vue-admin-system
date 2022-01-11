@@ -40,10 +40,11 @@ export default {
         return callback(new Error('password is invalid'))
       }
     }
+
     return {
       loginForm: {
-        email: '',
-        password: ''
+        email: 'jojo@gmail.com',
+        password: '123456'
       },
       loginFormRules: {
         email: [
@@ -68,7 +69,10 @@ export default {
         // console.log(res)
         if (res.meta.status === 200) {
           // this.$message.success('log in successfully')
+          window.sessionStorage.clear()
+          // save user info to sessionStorage
           window.sessionStorage.setItem('token', res.data.token)
+          // redirect
           this.$router.push('/admin/home')
         } else {
           this.$message.error('email or password is wrong')
