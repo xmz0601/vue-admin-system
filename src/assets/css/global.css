@@ -1,0 +1,86 @@
+html, body, #app {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, input {
+    outline: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* clear float */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.el-submenu__title {
+    font-size: 17px;
+}
+
+.el-breadcrumb {
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.el-card {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+}
+
+.el-table {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.el-cascader-menu .el-radio {
+    display: table;
+    vertical-align: middle;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    margin-left: -20px;
+    padding-left: 10px;
+}
+
+/* hide radio and checkbox */
+.el-cascader-menu .el-radio__inner {
+    display: none;
+}
+
+.ql-editor {
+    min-height: 300px;
+}
+
+.disabled .el-upload--picture-card {
+    display: none;
+}
